@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navbar {
+  position: fixed; /* Keeps navbar fixed at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures navbar stays above other elements */
+  background-color: white; /* Keeps it visible */
+}
+
+/* Adjust based on navbar height to prevent content from being hidden */
