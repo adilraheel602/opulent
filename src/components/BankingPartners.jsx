@@ -61,12 +61,14 @@ const BankingPartners = () => {
               key={bank.id}
               className="flex-shrink-0 snap-center transition-transform duration-300 hover:scale-105"
             >
-              <img
-                src={bank.src}
-                alt={bank.alt}
-                className="h-12 sm:h-16 md:h-20 w-auto rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
-                loading="lazy"
-              />
+              <div className="w-32 h-20 sm:w-40 sm:h-24 md:w-48 md:h-28 flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+                <img
+                  src={bank.src}
+                  alt={bank.alt}
+                  className="w-full h-full object-contain"
+                  loading="lazy"
+                />
+              </div>
             </div>
           ))}
         </div>

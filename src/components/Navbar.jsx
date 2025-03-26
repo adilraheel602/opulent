@@ -41,7 +41,7 @@ const Navbar = () => {
   return (
     <nav className="absolute top-0 left-0 w-full z-20">
       {/* Top Bar - Made Responsive */}
-      <div className="absolute w-full bg-transparent px-4 md:px-10 py-2 text-white text-sm">
+      <div className="absolute w-full bg-transparent px-4 md:px-10 pt-6 pb-2 text-white text-sm">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
           {/* Contact Info */}
           <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4 mb-2 md:mb-0">
@@ -97,7 +97,7 @@ const Navbar = () => {
         className={`transition-all duration-300 ease-in-out ${
           isScrolled
             ? "fixed top-0 left-0 w-full rounded-none shadow-lg backdrop-blur-md border border-gray-300"
-            : "relative w-[95%] mx-auto mt-20 md:mt-10 rounded-xl border border-gray-300"
+            : "relative w-[95%] mx-auto mt-28 md:mt-16 lg:mt-20 rounded-xl border border-gray-300"
         } bg-transparent p-4 z-10`}
       >
         <div className="py-3 flex justify-between items-center">
@@ -150,12 +150,12 @@ const Navbar = () => {
                 onMouseEnter={() => handleMouseEnter(menu.name)}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="hover:text-red-500 text-black flex items-center">
+                <button className="hover:text-blue-500 text-black flex items-center">
                   {menu.name} <span className="ml-1">▸</span>
                 </button>
                 {openDropdown === menu.name && (
                   <ul
-                    className="absolute left-0 mt-2 w-44 bg-red-500 text-black shadow-lg rounded-md py-2"
+                    className="absolute left-0 mt-2 w-44 bg-blue-400 text-black shadow-lg rounded-md py-2"
                     onMouseEnter={() => clearTimeout(closeTimeout)}
                     onMouseLeave={handleMouseLeave}
                   >
@@ -174,27 +174,27 @@ const Navbar = () => {
               </li>
             ))}
             <li>
-              <a href="#" className="hover:text-red-500">
+              <a href="#" className="hover:text-blue-500">
                 Portfolio
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-red-500">
+              <a href="#" className="hover:text-blue-500">
                 Team
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-red-500">
+              <a href="#" className="hover:text-blue-500">
                 Testimonial
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-red-500">
+              <a href="#" className="hover:text-blue-500">
                 Blog
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-red-500">
+              <a href="#" className="hover:text-blue-500">
                 Contact
               </a>
             </li>

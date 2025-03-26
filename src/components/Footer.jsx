@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link
+import { Link } from "react-router-dom";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import {
   FaFacebookF,
@@ -32,163 +32,121 @@ const Footer = () => {
   };
 
   return (
-    <>
-      <div>
-        {/* <div className="w-full text-center py-10">
-          <h2 className="text-3xl font-bold mb-6">Banking Partners</h2>
-          <div className="relative flex justify-center items-center overflow-hidden">
-            <motion.div
-              className="flex gap-8"
-              initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              {bankingPartners.map((partner, i) => (
-                <img
-                  key={i}
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="h-16 object-contain"
-                />
-              ))}
-            </motion.div>
-            <button
-              className="absolute left-0 bg-white p-2 rounded-full"
-              onClick={prevSlide}
-            >
-              ‹
-            </button>
-            <button
-              className="absolute right-0 bg-white p-2 rounded-full"
-              onClick={nextSlide}
-            >
-              ›
-            </button>
+    <footer className="bg-black text-white">
+      {/* Main Footer */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+          {/* About Section */}
+          <div className="space-y-4">
+            <h2 className="text-lg font-bold uppercase mb-4 border-b border-gray-700 pb-2">
+              About Us
+            </h2>
+            <img
+              src={logoStamp}
+              alt="AE Power Logo"
+              className="w-32 sm:w-40 mb-4"
+            />
+            <p className="text-gray-400 text-sm sm:text-base">
+              Opulent Group of Companies is a leading textile company that
+              provides high-quality products and services to its customers.
+            </p>
+            <p className="text-sm sm:text-base">
+              Copyright 2025 ©{" "}
+              <span className="hover:text-red-500 transition-colors">
+                Opulent Group of Companies
+              </span>
+            </p>
           </div>
 
-          <div className="bg-black text-white py-10 mt-10 flex flex-col md:flex-row justify-around">
-            <div className="flex items-center gap-4">
-              <FaEnvelope className="text-red-500 text-3xl" />
-              <div>
-                <p className="font-bold">Support & Email</p>
-                <p>info@opulent-elite.com</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <FaPhone className="text-red-500 text-3xl" />
-              <div>
-                <p className="font-bold">Customer Support</p>
-                <p>0304-111-0767</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <FaMapMarkerAlt className="text-red-500 text-3xl" />
-              <div>
-                <p className="font-bold">Corporate Office</p>
-                <p>38 Babar Block, New Garden, Lahore, Pakistan</p>
-              </div>
-            </div>
-          </div>
-        </div> */}
-      </div>
-      <footer className="bg-black text-white py-12">
-        <div className="container mx-auto px-6 lg:px-20">
-          <div className="grid md:grid-cols-3 gap-10 items-start">
-            {/* Logo & Description */}
-            <div>
-              <h2 className="text-lg font-bold uppercase mb-4 border-b border-gray-700 pb-2">
-                About Us
-              </h2>
-              <img src={logoStamp} alt="AE Power Logo" className="w-40 mb-4" />
-              <p className="text-gray-400 text-sm">
-                Opulent Group of Companies is a leading textile company that
-                provides high-quality products and services to its customers.
-              </p>
-              <p>
-                Copyright 2025 © <span>Opulent Group of Companies</span>
-              </p>
-            </div>
-
-            {/* Quick Links */}
-            <div className="bg-black text-white p-6">
-              <h2 className="text-lg font-bold uppercase mb-4 border-b border-gray-700 pb-2">
-                Useful Links
-              </h2>
-              <div className="grid grid-cols-2 gap-2 text-gray-300">
-                <Link to="/about" className="hover:text-white">
-                  About
+          {/* Quick Links */}
+          <div className="bg-black text-white">
+            <h2 className="text-lg font-bold uppercase mb-4 border-b border-gray-700 pb-2">
+              Useful Links
+            </h2>
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 text-gray-300">
+              {[
+                { to: "/about", text: "About" },
+                { to: "#", text: "Team" },
+                { to: "#", text: "Service" },
+                { to: "#", text: "Blog" },
+                { to: "#", text: "Portfolio" },
+                { to: "#", text: "FAQ" },
+                { to: "#", text: "Testimonial" },
+                { to: "#", text: "Privacy Policy" },
+              ].map((link, index) => (
+                <Link
+                  key={index}
+                  to={link.to}
+                  className="hover:text-red-500 transition-colors duration-300 text-sm sm:text-base"
+                >
+                  {link.text}
                 </Link>
-                <a href="#" className="hover:text-white">
-                  Team
-                </a>
-                <a href="#" className="hover:text-white">
-                  Service
-                </a>
-                <a href="#" className="hover:text-white">
-                  Blog
-                </a>
-                <a href="#" className="hover:text-white">
-                  Portfolio
-                </a>
-                <a href="#" className="hover:text-white">
-                  Faq
-                </a>
-                <a href="#" className="hover:text-white">
-                  Testimonial
-                </a>
-                <a href="#" className="hover:text-white">
-                  Privacy Policy
-                </a>
-              </div>
+              ))}
             </div>
+          </div>
 
-            {/* Services */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4">CONTACT INFO</h3>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Contact us and we'll get back to you within 24 hours.
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    38 Babar Block New Garden Town Lahore
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    info@opulent-elite.com
-                  </a>
-                </li>
-                {/* Social Icons */}
-                <div className="flex justify-center mt-10 space-x-6 text-gray-400 text-lg">
-                  <a href="#" className="hover:text-white">
-                    <FaFacebookF />
-                  </a>
-                  <a href="#" className="hover:text-white">
-                    <FaYoutube />
-                  </a>
-                  <a href="#" className="hover:text-white">
-                    <FaLinkedinIn />
-                  </a>
-                  <a href="#" className="hover:text-white">
-                    <FaInstagram />
-                  </a>
-                </div>
-              </ul>
+          {/* Contact Info */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold uppercase mb-4 border-b border-gray-700 pb-2">
+              Contact Info
+            </h3>
+            <ul className="space-y-3 text-gray-400">
+              <li className="flex items-start space-x-2">
+                <FaMapMarkerAlt className="mt-1 flex-shrink-0 text-red-500" />
+                <span className="text-sm sm:text-base">
+                  38 Babar Block New Garden Town Lahore
+                </span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <FaEnvelope className="flex-shrink-0 text-red-500" />
+                <a
+                  href="mailto:info@opulent-elite.com"
+                  className="text-sm sm:text-base hover:text-red-500 transition-colors"
+                >
+                  info@opulent-elite.com
+                </a>
+              </li>
+              <li className="flex items-center space-x-2">
+                <FaPhone className="flex-shrink-0 text-red-500" />
+                <a
+                  href="tel:0304-111-0767"
+                  className="text-sm sm:text-base hover:text-red-500 transition-colors"
+                >
+                  0304-111-0767
+                </a>
+              </li>
+            </ul>
+
+            {/* Social Icons */}
+            <div className="flex justify-start space-x-6 pt-4">
+              {[
+                { Icon: FaFacebookF, href: "#" },
+                { Icon: FaYoutube, href: "#" },
+                { Icon: FaLinkedinIn, href: "#" },
+                { Icon: FaInstagram, href: "#" },
+              ].map(({ Icon, href }, index) => (
+                <a
+                  key={index}
+                  href={href}
+                  className="text-gray-400 hover:text-red-500 transition-colors duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon className="text-xl sm:text-2xl" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Copyright */}
-        <div className="bg-red-600 text-center py-4 mt-10">
-          <p className="text-sm">
-            Copyright © 2024 Solor. All rights reserved.
-          </p>
-        </div>
-      </footer>
-    </>
+      {/* Copyright Bar */}
+      <div className="bg-red-600 text-center py-3 sm:py-4">
+        <p className="text-sm sm:text-base">
+          Copyright © {new Date().getFullYear()} Solor. All rights reserved.
+        </p>
+      </div>
+    </footer>
   );
 };
 
