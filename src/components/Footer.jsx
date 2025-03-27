@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../Images/logostamp.png";
+import logo from "../Images/logoStamp.png";
 import emailIcon from "../Images/emailIcon.png";
 
 const Footer = () => {
