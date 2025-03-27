@@ -85,7 +85,7 @@ const Features = () => {
           viewport={{ once: true }}
           className="mb-8 sm:mb-12 lg:mb-16"
         >
-          <h3 className="text-blue-500 uppercase text-lg sm:text-xl lg:text-2xl font-bold tracking-wider mb-2">
+          <h3 className="text-[#2BC0CD] uppercase text-lg sm:text-xl lg:text-2xl font-bold tracking-wider mb-2">
             OPULENT
           </h3>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">
@@ -102,7 +102,7 @@ const Features = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="relative bg-red-500 text-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="relative bg-[#2BC0CD] text-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <img
                 src={feature.icon}
@@ -179,7 +179,7 @@ const Features = () => {
                 </p>
                 <motion.a
                   href={news.link}
-                  className="inline-block px-6 py-2 bg-red-600 text-white rounded-full text-sm font-semibold hover:bg-red-700 transition-colors duration-300"
+                  className="inline-block px-6 py-2 bg-[#2BC0CD] text-white rounded-full text-sm font-semibold hover:bg-red-700 transition-colors duration-300"
                 >
                   Read More
                 </motion.a>
@@ -190,9 +190,9 @@ const Features = () => {
       </section>
 
       {/* FAQ Section */}
-      <FAQSection />
+      {/* <FAQSection /> */}
 
-      {/* Contact Section - Enhanced layout and responsiveness */}
+      {/* Contact Section - Enhanced layout and responsiveness
       <div className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <div className="flex flex-col sm:flex-row items-center bg-gray-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 max-w-4xl mx-auto">
           <div className="w-full sm:w-1/3 h-48 sm:h-full">
@@ -223,7 +223,7 @@ const Features = () => {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

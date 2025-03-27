@@ -20,14 +20,14 @@ const Video = () => {
       <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center p-4">
         {/* Play Button with enhanced hover effects */}
         <div
-          className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center border-4 border-red-500 rounded-full cursor-pointer transform hover:scale-110 hover:border-red-600 transition-all duration-300 group"
+          className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center border-4 border-[#2BC0CD] rounded-full cursor-pointer transform hover:scale-110 hover:border-[#2BC0CD] transition-all duration-300 group"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           role="button"
           aria-label="Play video"
         >
           <svg
-            className="w-8 h-8 sm:w-10 sm:h-10 text-red-500 group-hover:text-red-600 transition-colors duration-300"
+            className="w-8 h-8 sm:w-10 sm:h-10 text-[#2BC0CD] group-hover:text-[#2BC0CD] transition-colors duration-300"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"

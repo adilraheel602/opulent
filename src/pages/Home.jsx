@@ -5,6 +5,7 @@ import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Features from "../components/Features";
 import BankingPartners from "../components/BankingPartners";
+import ContactForm from "../components/ContactForm";
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
       <Features />
       <About />
       <BankingPartners />
+      <ContactForm />
       <Footer />
     </>
   );

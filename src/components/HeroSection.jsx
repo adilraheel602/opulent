@@ -47,7 +47,7 @@ const HeroSection = () => {
 
   return (
     <div className="w-full overflow-hidden">
-      <section className="py-8 sm:py-12 md:py-16 bg-gray-100 text-center">
+      <section className="py-8 sm:py-12 md:py-16 text-center">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 px-4">
           Departments
         </h2>

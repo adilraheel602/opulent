@@ -47,7 +47,7 @@ const FAQSection = () => {
           <div key={index}>
             <motion.div
               className={`flex justify-between items-center p-4 rounded-lg cursor-pointer transition-all ${
-                activeIndex === index ? "bg-red-600 text-white" : "bg-gray-100"
+                activeIndex === index ? "bg-[#2BC0CD] text-white" : "bg-gray-100"
               }`}
               onClick={() => toggleFAQ(index)}
             >

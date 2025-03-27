@@ -25,10 +25,10 @@ const ImageSlider = () => {
           TEXTILES
         </h1>
         <div className="mt-4 sm:mt-6 md:mt-8 space-y-4 sm:space-y-0 sm:space-x-4 flex flex-col sm:flex-row">
-          <button className="bg-blue-500 px-4 sm:px-6 py-2 sm:py-3 rounded-full text-white text-sm sm:text-base transition-all duration-300 hover:bg-red-500 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400">
+          <button className="bg-[#2BC0CD] px-4 sm:px-6 py-2 sm:py-3 rounded-full text-white text-sm sm:text-base transition-all duration-300 hover:bg-[#3befff] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400">
             Our Service
           </button>
-          <button className="bg-transparent border-2 border-blue-500 px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base transition-all duration-300 hover:text-black hover:bg-white hover:border-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400">
+          <button className="bg-transparent text-white border-2 border-[#2BC0CD] px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base transition-all duration-300 hover:text-[#2BC0CD] hover:border-[#2BC0CD] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400">
             Contact Now
           </button>
         </div>

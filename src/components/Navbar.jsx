@@ -5,6 +5,7 @@ import email from "../Images/email.png"; // Ensure correct path
 import call from "../Images/call.png"; // Ensure correct path
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import images from "../Images/images.png"; // Ensure correct path
+import { Link } from "react-router-dom"; // Ensure correct path
 
 const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -40,64 +41,12 @@ const Navbar = () => {
 
   return (
     <nav className="absolute top-0 left-0 w-full z-20">
-      {/* Top Bar - Made Responsive */}
-      <div className="absolute w-full bg-transparent px-4 md:px-10 pt-6 pb-2 text-white text-sm">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
-          {/* Contact Info */}
-          <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4 mb-2 md:mb-0">
-            <span className="flex items-center">
-              <img className="h-5 w-5 mr-2" src={email} alt="Email" />
-              <span className="text-xs md:text-sm">info@aepower.pk</span>
-            </span>
-            <span className="flex items-center">
-              <img className="h-5 w-5 mr-2" src={call} alt="Call" />
-              <span className="text-xs md:text-sm">0304-111-0767</span>
-            </span>
-          </div>
-          {/* Social Icons */}
-          <div className="flex space-x-4">
-            <a
-              href="https://www.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-            >
-              <i className="fab fa-facebook text-blue-600 text-2xl"></i>
-            </a>
-            <a
-              href="https://www.youtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="YouTube"
-            >
-              <i className="fab fa-youtube text-red-600 text-2xl"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <i className="fab fa-linkedin text-blue-500 text-2xl"></i>
-            </a>
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <i className="fab fa-instagram text-pink-500 text-2xl"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Main Navbar */}
       <div
         className={`transition-all duration-300 ease-in-out ${
           isScrolled
             ? "fixed top-0 left-0 w-full rounded-none shadow-lg backdrop-blur-md border border-gray-300"
-            : "relative w-[95%] mx-auto mt-28 md:mt-16 lg:mt-20 rounded-xl border border-gray-300"
+            : "relative w-[95%] mx-auto mt-16 md:mt-10 lg:mt-12 rounded-xl border border-gray-300"
         } bg-transparent p-4 z-10`}
       >
         <div className="py-3 flex justify-between items-center">
@@ -131,7 +80,7 @@ const Navbar = () => {
 
           {/* Navigation Links - Desktop */}
           <ul
-            className={`hidden md:flex space-x-4 lg:space-x-6 text-black font-medium`}
+            className={`hidden md:flex space-x-4 lg:space-x-6 text-white font-medium`}
           >
             {[
               { name: "HOME", items: ["About", "News"] },
@@ -150,12 +99,12 @@ const Navbar = () => {
                 onMouseEnter={() => handleMouseEnter(menu.name)}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="hover:text-blue-500 text-black flex items-center">
+                <button className="hover:text-[#2BC0CD] text-white flex items-center">
                   {menu.name} <span className="ml-1">▸</span>
                 </button>
                 {openDropdown === menu.name && (
                   <ul
-                    className="absolute left-0 mt-2 w-44 bg-blue-400 text-black shadow-lg rounded-md py-2"
+                    className="absolute left-0 mt-2 w-44 bg-[#2BC0CD] text-black shadow-lg rounded-md py-2"
                     onMouseEnter={() => clearTimeout(closeTimeout)}
                     onMouseLeave={handleMouseLeave}
                   >
@@ -174,27 +123,27 @@ const Navbar = () => {
               </li>
             ))}
             <li>
-              <a href="#" className="hover:text-blue-500">
+              <a href="#" className="hover:text-[#2BC0CD]">
                 Portfolio
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-blue-500">
+              <a href="#" className="hover:text-[#2BC0CD]">
                 Team
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-blue-500">
+              <a href="#" className="hover:text-[#2BC0CD]">
                 Testimonial
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-blue-500">
+              <a href="#" className="hover:text-[#2BC0CD]">
                 Blog
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-blue-500">
+              <a href="#" className="hover:text-[#2BC0CD]">
                 Contact
               </a>
             </li>
@@ -218,7 +167,7 @@ const Navbar = () => {
                 "Contact",
               ].map((item, index) => (
                 <li key={index} className="px-4 py-2">
-                  <a href="#" className="block hover:text-red-500">
+                  <a href="#" className="block hover:text-[#2BC0CD]">
                     {item}
                   </a>
                 </li>
@@ -227,12 +176,13 @@ const Navbar = () => {
           </div>
 
           {/* Call to Action Button */}
-          <a
-            href="#"
-            className="hidden md:inline-block bg-blue-400 text-white px-3 md:px-5 py-1.5 md:py-2 text-sm md:text-base rounded-full font-medium border-2 border-blue-200 transition duration-500 ease-in-out hover:bg-black hover:border-red-500 hover:text-red-500"
+          <Link
+            href="/login"
+            to="login"
+            className="hidden md:inline-block bg-[#2BC0CD] text-white px-3 md:px-5 py-1.5 md:py-2 text-sm md:text-base rounded-full font-medium border-2 border-white transition duration-500 ease-in-out hover:bg-white hover:border-[#2BC0CD] hover:text-[#2BC0CD]"
           >
-            Components
-          </a>
+            Log In
+          </Link>
         </div>
       </div>
     </nav>

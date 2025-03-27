@@ -1,150 +1,57 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
-import {
-  FaFacebookF,
-  FaYoutube,
-  FaLinkedinIn,
-  FaInstagram,
-} from "react-icons/fa";
-import logoStamp from "../Images/logoStamp.png";
-
-const bankingPartners = [
-  { name: "Bank Alfalah", logo: "/bank-alfalah.png" },
-  { name: "Allied Bank", logo: "/allied-bank.png" },
-  { name: "Meezan Bank", logo: "/meezan-bank.png" },
-  { name: "Bank of Punjab", logo: "/bop.png" },
-  { name: "JS Bank", logo: "/js-bank.png" },
-];
+import React from "react";
+import logo from "../Images/logostamp.png";
+import emailIcon from "../Images/emailIcon.png";
 
 const Footer = () => {
-  const [index, setIndex] = useState(0);
-
-  const nextSlide = () => {
-    setIndex((prev) => (prev + 1) % bankingPartners.length);
-  };
-
-  const prevSlide = () => {
-    setIndex(
-      (prev) => (prev - 1 + bankingPartners.length) % bankingPartners.length
-    );
-  };
-
   return (
-    <footer className="bg-black text-white">
-      {/* Main Footer */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-          {/* About Section */}
-          <div className="space-y-4">
-            <h2 className="text-lg font-bold uppercase mb-4 border-b border-gray-700 pb-2">
-              About Us
-            </h2>
-            <img
-              src={logoStamp}
-              alt="AE Power Logo"
-              className="w-32 sm:w-40 mb-4"
-            />
-            <p className="text-gray-400 text-sm sm:text-base">
-              Opulent Group of Companies is a leading textile company that
-              provides high-quality products and services to its customers.
-            </p>
-            <p className="text-sm sm:text-base">
-              Copyright 2025 ©{" "}
-              <span className="hover:text-red-500 transition-colors">
-                Opulent Group of Companies
-              </span>
-            </p>
-          </div>
+    <footer className="bg-gray-900 text-white py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-16">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
+        {/* Company Info Section */}
+        <div className="space-y-4">
+          <img
+            src={logo}
+            alt="Logo"
+            className="h-8 sm:h-10 md:h-12 w-auto object-contain"
+          />
+          <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-lg">
+            Opulent Group of Companies is a leading textile company that
+            provides high-quality products and services to its customers.
+          </p>
+        </div>
 
-          {/* Quick Links */}
-          <div className="bg-black text-white">
-            <h2 className="text-lg font-bold uppercase mb-4 border-b border-gray-700 pb-2">
-              Useful Links
-            </h2>
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 text-gray-300">
-              {[
-                { to: "/about", text: "About" },
-                { to: "#", text: "Team" },
-                { to: "#", text: "Service" },
-                { to: "#", text: "Blog" },
-                { to: "#", text: "Portfolio" },
-                { to: "#", text: "FAQ" },
-                { to: "#", text: "Testimonial" },
-                { to: "#", text: "Privacy Policy" },
-              ].map((link, index) => (
-                <Link
-                  key={index}
-                  to={link.to}
-                  className="hover:text-red-500 transition-colors duration-300 text-sm sm:text-base"
-                >
-                  {link.text}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Contact Info */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold uppercase mb-4 border-b border-gray-700 pb-2">
-              Contact Info
-            </h3>
-            <ul className="space-y-3 text-gray-400">
-              <li className="flex items-start space-x-2">
-                <FaMapMarkerAlt className="mt-1 flex-shrink-0 text-red-500" />
-                <span className="text-sm sm:text-base">
-                  38 Babar Block New Garden Town Lahore
-                </span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <FaEnvelope className="flex-shrink-0 text-red-500" />
-                <a
-                  href="mailto:info@opulent-elite.com"
-                  className="text-sm sm:text-base hover:text-red-500 transition-colors"
-                >
-                  info@opulent-elite.com
-                </a>
-              </li>
-              <li className="flex items-center space-x-2">
-                <FaPhone className="flex-shrink-0 text-red-500" />
-                <a
-                  href="tel:0304-111-0767"
-                  className="text-sm sm:text-base hover:text-red-500 transition-colors"
-                >
-                  0304-111-0767
-                </a>
-              </li>
-            </ul>
-
-            {/* Social Icons */}
-            <div className="flex justify-start space-x-6 pt-4">
-              {[
-                { Icon: FaFacebookF, href: "#" },
-                { Icon: FaYoutube, href: "#" },
-                { Icon: FaLinkedinIn, href: "#" },
-                { Icon: FaInstagram, href: "#" },
-              ].map(({ Icon, href }, index) => (
-                <a
-                  key={index}
-                  href={href}
-                  className="text-gray-400 hover:text-red-500 transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Icon className="text-xl sm:text-2xl" />
-                </a>
-              ))}
+        {/* Newsletter Section */}
+        <div className="space-y-4 sm:space-y-6">
+          <h3 className="text-lg sm:text-xl font-semibold text-white">
+            Get Notified
+          </h3>
+          <p className="text-gray-400 text-sm sm:text-base">
+            Contact us and we'll get back to you within 24 hours.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-0">
+            <div className="flex items-center bg-gray-800 rounded-lg overflow-hidden w-full sm:w-auto">
+              <div className="flex items-center px-3 py-2">
+                <img
+                  src={emailIcon}
+                  alt="Email Icon"
+                  className="w-5 h-4 sm:w-6 sm:h-4"
+                />
+              </div>
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="flex-1 px-3 sm:px-4 py-2 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2BC0CD] text-sm sm:text-base min-w-[200px]"
+              />
+              <button className="bg-[#2BC0CD] text-white px-4 sm:px-6 py-2 font-semibold text-sm sm:text-base hover:bg-[#2399A2] transition-colors duration-300">
+                Subscribe
+              </button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Copyright Bar */}
-      <div className="bg-red-600 text-center py-3 sm:py-4">
-        <p className="text-sm sm:text-base">
-          Copyright © {new Date().getFullYear()} Solor. All rights reserved.
-        </p>
+      {/* Copyright Section */}
+      <div className="text-center text-gray-500 text-sm sm:text-base mt-8 sm:mt-10 border-t border-gray-700 pt-4 sm:pt-6">
+        &copy; Copyright Opulent House {new Date().getFullYear()}
       </div>
     </footer>
   );

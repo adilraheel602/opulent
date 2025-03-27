@@ -16,7 +16,7 @@ function CursorFollower() {
     <div>
       {/* Red Dot */}
       <div
-        className="fixed w-3 h-3 bg-blue-500 rounded-full pointer-events-none transition-all duration-75"
+        className="fixed w-3 h-3 bg-[#2BC0CD] rounded-full pointer-events-none transition-all duration-75"
         style={{
           left: position.x + "px",
           top: position.y + "px",
