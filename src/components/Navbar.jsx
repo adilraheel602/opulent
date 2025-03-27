@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../App.css"; // Ensure correct path
 import logoStamp from "../Images/logoStamp.png"; // Ensure correct path
-import email from "../Images/email.png"; // Ensure correct path
-import call from "../Images/call.png"; // Ensure correct path
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import images from "../Images/images.png"; // Ensure correct path
 import { Link } from "react-router-dom"; // Ensure correct path
 
 const Navbar = () => {
@@ -15,45 +12,33 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleMouseEnter = (menu) => {
-    if (closeTimeout) {
-      clearTimeout(closeTimeout);
-    }
+    if (closeTimeout) clearTimeout(closeTimeout);
     setOpenDropdown(menu);
   };
 
   const handleMouseLeave = () => {
-    const timeout = setTimeout(() => {
-      setOpenDropdown(null);
-    }, 300);
+    const timeout = setTimeout(() => setOpenDropdown(null), 300);
     setCloseTimeout(timeout);
   };
 
   return (
     <nav className="absolute top-0 left-0 w-full z-20">
-      {/* Main Navbar */}
       <div
-        className={`transition-all duration-300 ease-in-out ${
+        className={`transition-all duration-300 ease-in-out bg-transparent p-4 z-10 ${
           isScrolled
             ? "fixed top-0 left-0 w-full rounded-none shadow-lg backdrop-blur-md border border-gray-300"
             : "relative w-[95%] mx-auto mt-16 md:mt-10 lg:mt-12 rounded-xl border border-gray-300"
-        } bg-transparent p-4 z-10`}
+        }`}
       >
         <div className="py-3 flex justify-between items-center">
-          {/* Logo */}
           <img src={logoStamp} alt="AE Power Logo" className="h-8 md:h-12" />
-
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -78,78 +63,50 @@ const Navbar = () => {
             </svg>
           </button>
 
-          {/* Navigation Links - Desktop */}
-          <ul
-            className={`hidden md:flex space-x-4 lg:space-x-6 text-white font-medium`}
-          >
+          <ul className="hidden md:flex space-x-4 lg:space-x-6 text-white font-medium">
             {[
-              { name: "HOME", items: ["About", "News"] },
-              {
-                name: "ABOUT",
-                items: ["Products", "CEO Speech"],
-              },
-              {
-                name: "Service",
-                items: ["ABC", "DEF", "GHI"],
-              },
-            ].map((menu, index) => (
+              "HOME",
+              "ABOUT",
+              "Service",
+              "Portfolio",
+              "Team",
+              "Testimonial",
+              "Blog",
+              "Contact",
+            ].map((item, index) => (
               <li
                 key={index}
                 className="relative"
-                onMouseEnter={() => handleMouseEnter(menu.name)}
+                onMouseEnter={() => handleMouseEnter(item)}
                 onMouseLeave={handleMouseLeave}
               >
                 <button className="hover:text-[#2BC0CD] text-white flex items-center">
-                  {menu.name} <span className="ml-1">▸</span>
+                  {item} {index < 3 && <span className="ml-1">▸</span>}
                 </button>
-                {openDropdown === menu.name && (
+                {openDropdown === item && index < 3 && (
                   <ul
                     className="absolute left-0 mt-2 w-44 bg-[#2BC0CD] text-black shadow-lg rounded-md py-2"
                     onMouseEnter={() => clearTimeout(closeTimeout)}
                     onMouseLeave={handleMouseLeave}
                   >
-                    {menu.items.map((item, idx) => (
-                      <li key={idx}>
-                        <a
-                          href="#"
-                          className="block px-4 py-2 hover:text-white"
-                        >
-                          {item}
-                        </a>
-                      </li>
-                    ))}
+                    {["Option 1", "Option 2", "Option 3"].map(
+                      (subItem, idx) => (
+                        <li key={idx}>
+                          <a
+                            href="#"
+                            className="block px-4 py-2 hover:text-white"
+                          >
+                            {subItem}
+                          </a>
+                        </li>
+                      )
+                    )}
                   </ul>
                 )}
               </li>
             ))}
-            <li>
-              <a href="#" className="hover:text-[#2BC0CD]">
-                Portfolio
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-[#2BC0CD]">
-                Team
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-[#2BC0CD]">
-                Testimonial
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-[#2BC0CD]">
-                Blog
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-[#2BC0CD]">
-                Contact
-              </a>
-            </li>
           </ul>
 
-          {/* Navigation Links - Mobile */}
           <div
             className={`${
               isMobileMenuOpen ? "block" : "hidden"
@@ -175,10 +132,8 @@ const Navbar = () => {
             </ul>
           </div>
 
-          {/* Call to Action Button */}
           <Link
-            href="/login"
-            to="login"
+            to="/login"
             className="hidden md:inline-block bg-[#2BC0CD] text-white px-3 md:px-5 py-1.5 md:py-2 text-sm md:text-base rounded-full font-medium border-2 border-white transition duration-500 ease-in-out hover:bg-white hover:border-[#2BC0CD] hover:text-[#2BC0CD]"
           >
             Log In
