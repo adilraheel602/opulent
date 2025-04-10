@@ -149,7 +149,7 @@ const Features = () => {
       <Video />
 
       {/* News Feed Section - Improved grid and spacing */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gray-100 px-4 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
             News Feed
